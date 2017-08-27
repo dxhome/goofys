@@ -32,8 +32,8 @@ RUN git clone --depth 1 https://github.com/skoobe/riofs && \
 # ideally I want to clear out all the go deps too but there's no
 # way to do that with ADD
 ENV PATH=$PATH:/root/go/bin
-ADD . /root/go/src/github.com/kahing/goofys
-WORKDIR /root/go/src/github.com/kahing/goofys
+ADD . /root/go/src/github.com/dxhome/goofys
+WORKDIR /root/go/src/github.com/dxhome/goofys
 RUN go get . && go install
 
-ENTRYPOINT ["/root/go/src/github.com/kahing/goofys/bench/run_bench.sh"]
+ENTRYPOINT ["/root/go/src/github.com/dxhome/goofys/bench/run_bench.sh"]
